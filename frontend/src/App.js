@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link, useNavigate, Navigate } from 'react-router-dom';
 import axios from 'axios';
 
-const API_URL = 'http://localhost:5000/api';
+const API_URL = 'https://lifetag.onrender.com/api';
 
 const Signup = () => {
   const [formData, setFormData] = useState({ name: '', email: '', password: '', role: 'patient' });
