@@ -81,6 +81,16 @@ const contract = new ethers.Contract(process.env.CONTRACT_ADDRESS, abi, wallet);
 
 // --- Auth APIs ---
 
+app.get('/api/status', (req, res) => {
+  res.status(200).json({
+    status: 'ok',
+    service: 'LifeTag Backend',
+    timestamp: new Date().toISOString(),
+    uptime: process.uptime(),
+    database: 'connected'
+  });
+});
+
 app.post('/api/signup', async (req, res) => {
   try {
     const { error, value } = signupSchema.validate(req.body);
